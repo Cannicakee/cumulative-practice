@@ -19,9 +19,15 @@ str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spider
 ***********************************************************************/
 
 const spiderManWriters = (str) => {
-    // Your code here 
+    let badWriters = {};
+    let writers = str.join(':')
+    console.log(writers);
 }
 
+str1 = 'Angela T: wrote about Spiderman, Miah B: no Spiderman, Adrian R: wrote about Spiderman'
+console.log(spiderManWriters(str1));
+str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spiderman'
+console.log(spiderManWriters(str2));
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
     module.exports = spiderManWriters;

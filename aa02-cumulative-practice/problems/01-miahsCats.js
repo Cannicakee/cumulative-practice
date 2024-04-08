@@ -23,9 +23,31 @@ miahsCats(obj3) // 3
 ***********************************************************************/
 
 const miahsCats = obj => {
-    // Your code here 
-}
+    let keyWord1 = "cute";
+    let keyWord2 = "adorable";
+    let count = 0;
+    let result = Object.keys(obj).map((key) => [key, obj[key]]);
+    let string = result.toString().toLowerCase().split(',');
+        for(let i = 0; i < string.length; i++) {
+            let el = string[i];
+            if((el.includes(keyWord1)) || (el.includes(keyWord2))) {
+                
+                count++;
+            }
+        }
+    
+        return count;
+    }
 
+
+obj1 = {"Finn": "Smart lil boy, maximum cuTe", "Jake": "Not a dog, still cUte"}
+console.log(miahsCats(obj1)) // 2
+
+obj2 = {"CuteFace": "Has an adoRable face, loves snuggles", "Baby": "Very chonky lady, adorable fluffy face"}
+console.log(miahsCats(obj2)) // 3
+
+obj3 = {"Princess": "So much sass, cute AND fluffy", "adorable-boy": "Cute and funny"}
+console.log(miahsCats(obj3)) // 3
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
     module.exports = miahsCats;

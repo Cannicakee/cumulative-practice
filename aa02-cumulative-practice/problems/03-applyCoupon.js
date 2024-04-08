@@ -30,12 +30,25 @@ console.log(applyCoupon(20, wishList)); // => 78.4;
 *******************************************************************************/
 
 const applyCoupon = (discount, wishList) => {
-    // Your code here 
+    let total = 0;
+    let percent = discount / 100;
+    for (let item of wishList) total += item.price - (item.price * percent);
+    return total;
 }
 
+wishList = [
+    { name: "Xbox", price: 80 },
+    { name: "Bacon", price: 5 },
+    { name: "Gummy Candies", price: 3 },
+    { name: "SURGE soda 24 pack", price: 10 }
+];
+
+
+console.log(applyCoupon(10, wishList)); // => 88.2;
+console.log(applyCoupon(20, wishList)); // => 78.4;
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/
-try{
+try {
     module.exports = applyCoupon;
-} catch(e){
+} catch (e) {
     module.exports = null;
 }

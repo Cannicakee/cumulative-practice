@@ -21,12 +21,17 @@ manyArgs(1, 2, 5, 6) // 60
 ***********************************************************************/
 
 const manyArgs = (...args) => {
-    // Your code here 
+    return args.reduce((acc, curVal) => {
+        return acc * curVal;
+    })
 }
 
+console.log(manyArgs(1, 2, 3, 4, 5, 6, 7)) // 5040
+console.log(manyArgs(1, 2, 5, 6, 7)) // 420
+console.log(manyArgs(1, 2, 5, 6)) // 60
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-try{
+try {
     module.exports = manyArgs;
-} catch(e) {
+} catch (e) {
     module.exports = null;
 }

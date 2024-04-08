@@ -19,9 +19,20 @@ str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spider
 ***********************************************************************/
 
 const spiderManWriters = (str) => {
+    let notSpiderman = "no Spiderman";
     let badWriters = {};
-    let writers = str.join(':')
-    console.log(writers);
+    let writers = str.split(',')
+    for(let i = 0; i < writers.length; i++) {
+        let el = writers[i];
+        if(el.includes(notSpiderman)) {
+            let split = el.split(',');
+            split.forEach(function(property) {
+                const tup = property.trim().split(': ');
+                badWriters[tup[0]] = tup[1];
+            })
+        }
+    }
+    return badWriters;
 }
 
 str1 = 'Angela T: wrote about Spiderman, Miah B: no Spiderman, Adrian R: wrote about Spiderman'
